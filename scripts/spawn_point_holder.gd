@@ -34,6 +34,5 @@ func _on_wave_timer_timeout() -> void:
 		var spawnedEnemy = randomEnemy.instantiate();
 		get_tree().get_root().add_child(spawnedEnemy);
 		spawnedEnemy.global_position = spawnPoints[index].global_position;
-		spawnedEnemy.look_at(Vector2(0,0));
 		
 		

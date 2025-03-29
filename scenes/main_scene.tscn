@@ -7,7 +7,6 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1152, 648)
 scale = Vector2(0.1, 0.1)
 zoom = Vector2(0.5, 0.5)
 
@@ -18,7 +17,6 @@ autostart = true
 [node name="CenterIsland" type="Node2D" parent="."]
 
 [node name="SpawnPointHolder" type="Node2D" parent="." node_paths=PackedStringArray("spawnPoints")]
-position = Vector2(960, 540)
 script = ExtResource("1_a83y2")
 startingEnemies = 2
 enemyGrowthFactor = 0.5
