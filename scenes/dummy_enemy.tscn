@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://jwab5ak57jqk"]
+
+[ext_resource type="Texture2D" uid="uid://ij0awmc3l22c" path="res://sprites/800px-Circle_-_black_simple.svg.png" id="1_7q7wg"]
+
+[node name="DummyEnemy" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7q7wg")
