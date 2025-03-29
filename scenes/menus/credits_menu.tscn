@@ -54,17 +54,25 @@ layout_mode = 2
 theme_override_constants/separation = -30
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 55)
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 50
+text = "Score: 1000000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Score: 1000000000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 50
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -73,13 +81,16 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(1000, 300)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 30
 text = "Programming:
-Duarte Fonseca
+Catarina Costa
 Sara Marques
 
 Art:
-Timmy"
+João Batista
+
+Writing: 
+Francisco"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
