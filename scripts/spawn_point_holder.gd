@@ -4,6 +4,9 @@ extends Node2D
 @export var enemyGrowthFactor: float;
 @export var enemyArray: Array[PackedScene];
 @export var spawnPoints: Array[Node2D];
+@export var wavePrefab: PackedScene;
+
+@export var playAreaRadius: int = 540;
 
 var currentEnemies: int;
 var currentWave: int = 0;
@@ -36,3 +39,15 @@ func _on_wave_timer_timeout() -> void:
 		spawnedEnemy.spawnPointPos = spawnPoints[index].global_position;
 		
 		
+
+func _random_inside_unit_circle() -> Vector2:
+	var theta : float = rng.randf() * 2 * PI
+	return Vector2(cos(theta), sin(theta)) * sqrt(rng.randf())
+
+func _on_water_wave_timer_timeout() -> void:
+	var spawnPoint = _random_inside_unit_circle() * playAreaRadius;
+	var directionPoint = _random_inside_unit_circle() * playAreaRadius;
+	var spawnedWave = wavePrefab.instantiate();
+	$"../WaveSpawner".add_child(spawnedWave);
+	spawnedWave.global_position = spawnPoint.global_position;
+	spawnedWave.look_at(directionPoint);
