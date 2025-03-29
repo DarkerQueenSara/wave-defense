@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 resource=""
 player=""
+tower=""
 
 [input]
 
