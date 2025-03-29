@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://nof136r48xpt"]
+
+[ext_resource type="Script" path="res://scripts/wave.gd" id="1_smb2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at3hg"]
+
+[node name="Wave" type="Node2D"]
+script = ExtResource("1_smb2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(20, 2)
+shape = SubResource("RectangleShape2D_at3hg")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

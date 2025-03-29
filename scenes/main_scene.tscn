@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnv7cm5518vrg"]
+[gd_scene load_steps=9 format=3 uid="uid://cnv7cm5518vrg"]
 
 [ext_resource type="Script" path="res://scripts/spawn_point_holder.gd" id="1_a83y2"]
 [ext_resource type="Texture2D" uid="uid://ij0awmc3l22c" path="res://sprites/800px-Circle_-_black_simple.svg.png" id="1_wl7kx"]
-[ext_resource type="PackedScene" uid="uid://jwab5ak57jqk" path="res://scenes/dummy_enemy.tscn" id="2_smxux"]
-[ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
-[ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
+[ext_resource type="PackedScene" uid="uid://bcdknyqdtg00g" path="res://scenes/normal_enemy.tscn" id="2_ypghi"]
+[ext_resource type="PackedScene" uid="uid://qp5t131wopr4" path="res://scenes/fast_enemy.tscn" id="3_6ibv2"]
+[ext_resource type="PackedScene" uid="uid://dy5ntwxdt68ld" path="res://scenes/slow_enemy.tscn" id="4_6klbo"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_uuxnm"]
+[ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
+[ext_resource type="PackedScene" path="res://scenes/resource.tscn" id="5_vbinm"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -14,6 +17,12 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 30.0
+[node name="EnemyWaveTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="WaterWaveTimer" type="Timer" parent="."]
+wait_time = 10.0
 autostart = true
 
 [node name="CenterIsland" type="Node2D" parent="."]
@@ -22,8 +31,9 @@ autostart = true
 script = ExtResource("1_a83y2")
 startingEnemies = 2
 enemyGrowthFactor = 0.5
-enemyArray = Array[PackedScene]([ExtResource("2_smxux"), ExtResource("2_smxux"), ExtResource("2_smxux"), ExtResource("2_smxux")])
+enemyArray = Array[PackedScene]([ExtResource("2_ypghi"), ExtResource("3_6ibv2"), ExtResource("4_6klbo")])
 spawnPoints = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
+wavePrefab = ExtResource("5_pfcyh")
 
 [node name="SpawnPoint1" type="Node2D" parent="SpawnPointHolder"]
 position = Vector2(0, 540)
@@ -96,4 +106,7 @@ amount = 5
 [node name="Player" parent="." instance=ExtResource("4_uuxnm")]
 position = Vector2(15, 9)
 
-[connection signal="timeout" from="WaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
+[node name="WaveSpawner" type="Node2D" parent="."]
+
+[connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
