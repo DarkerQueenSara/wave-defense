@@ -1,15 +1,27 @@
 extends CharacterBody2D
 
-
+const TOWER = preload("res://scenes/tower.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var amount = 0
+var towersAvailable = 5
+var isWorkingOnCollision = false
+var triggered_objects = []
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left","right","up","down")	
 	velocity = input_dir * SPEED
 
 	move_and_slide()
+	
+	if (Input.is_action_just_pressed("build")):
+		if towersAvailable > 0:
+			var newTower = TOWER.instantiate()
+			newTower.global_position = global_position
+			get_parent().add_child(newTower)
+			towersAvailable -= 1
+		else:
+			print("no build")
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -17,3 +29,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		amount += area.amount
 		print(amount)
 		area.queue_free()
+
+func t_collision_func(tower):
+	triggered_objects.append(tower)
+	if (triggered_objects.size() == 2):
+		triggered_objects.sort_custom(func(a, b): return a.activation_time > b.activation_time)
+		triggered_objects[0].queue_free()
+		triggered_objects.clear()
+		
