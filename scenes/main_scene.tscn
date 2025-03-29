@@ -15,8 +15,6 @@
 scale = Vector2(0.1, 0.1)
 zoom = Vector2(0.5, 0.5)
 
-[node name="WaveTimer" type="Timer" parent="."]
-wait_time = 30.0
 [node name="EnemyWaveTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
