@@ -7,10 +7,22 @@ var amount = 0
 var towersAvailable = 5
 var isWorkingOnCollision = false
 var triggered_objects = []
+var rotation_speed = 1.5
+
+func _init() -> void:
+	look_at(Vector2(1,0))
 
 func _physics_process(delta: float) -> void:
-	var input_dir = Input.get_vector("left","right","up","down")	
-	velocity = input_dir * SPEED
+	#var input_dir = Input.get_vector("left","right","up","down")
+	var input_move = Input.get_axis("up","down")
+	var input_rotate = Input.get_axis("left","right")
+	
+	if input_move:
+		velocity = transform.y *  input_move * SPEED
+	else:
+		velocity = Vector2.ZERO
+	if input_rotate:
+		rotation += input_rotate * rotation_speed * delta
 
 	move_and_slide()
 	
