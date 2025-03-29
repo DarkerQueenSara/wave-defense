@@ -1,0 +1,153 @@
+[gd_scene load_steps=7 format=3 uid="uid://die4if2kryckv"]
+
+[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_lsu7h"]
+[ext_resource type="PackedScene" uid="uid://bildwjhyccmy7" path="res://scenes/menus/options_menu.tscn" id="2_pt8xw"]
+[ext_resource type="PackedScene" uid="uid://b0rcfjo0loyh7" path="res://scenes/menus/tutorial_menu.tscn" id="3_htvr0"]
+[ext_resource type="PackedScene" uid="uid://dkmk8k0t2yre8" path="res://scenes/menus/story_menu.tscn" id="4_grqxg"]
+
+[sub_resource type="SystemFont" id="SystemFont_ym704"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_aq7di"]
+font_names = PackedStringArray("Impact")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lsu7h")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -1352.5
+offset_right = 384.0
+offset_bottom = 1352.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -73.0
+offset_right = 5.0
+offset_bottom = 1290.8
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_ym704")
+theme_override_font_sizes/font_size = 64
+text = "Atlantis Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Options"
+
+[node name="TutorialButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Tutorial"
+
+[node name="StoryButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Story"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Credits
+"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aq7di")
+theme_override_font_sizes/font_size = 35
+text = "Exit"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("2_pt8xw")]
+visible = false
+layout_mode = 1
+
+[node name="TutorialMenu" parent="." instance=ExtResource("3_htvr0")]
+visible = false
+layout_mode = 1
+
+[node name="StoryMenu" parent="." instance=ExtResource("4_grqxg")]
+visible = false
+layout_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/MarginContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="TutorialMenu/MarginContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="StoryMenu/MarginContainer/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+
+[editable path="OptionsMenu"]
+[editable path="TutorialMenu"]
+[editable path="StoryMenu"]
