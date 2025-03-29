@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0xdt4jxlkvxw"]
+
+[ext_resource type="PackedScene" uid="uid://nllg77omh6tn" path="res://scenes/turret_base.tscn" id="1_r68ck"]
+[ext_resource type="Script" path="res://scripts/projectile_turret.gd" id="2_ol8ld"]
+[ext_resource type="PackedScene" uid="uid://cpsyannjrr76s" path="res://scenes/bullet.tscn" id="3_37qyx"]
+
+[node name="ProjectileTurret" instance=ExtResource("1_r68ck")]
+script = ExtResource("2_ol8ld")
+projectile = ExtResource("3_37qyx")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

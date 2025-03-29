@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcdknyqdtg00g"]
+
+[ext_resource type="PackedScene" uid="uid://jwab5ak57jqk" path="res://scenes/dummy_enemy.tscn" id="1_c8cfx"]
+
+[node name="NormalEnemy" instance=ExtResource("1_c8cfx")]
+enemySpeed = 20.0
+enemyDamage = 5
+enemyHealth = 5
