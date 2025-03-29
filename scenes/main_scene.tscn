@@ -13,7 +13,7 @@ scale = Vector2(0.1, 0.1)
 zoom = Vector2(0.5, 0.5)
 
 [node name="WaveTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 5.0
 autostart = true
 
 [node name="CenterIsland" type="Node2D" parent="."]
@@ -22,7 +22,7 @@ autostart = true
 script = ExtResource("1_a83y2")
 startingEnemies = 2
 enemyGrowthFactor = 0.5
-enemyArray = Array[PackedScene]([ExtResource("2_smxux"), ExtResource("2_smxux"), ExtResource("2_smxux"), ExtResource("2_smxux")])
+enemyArray = Array[PackedScene]([ExtResource("2_ypghi"), ExtResource("3_6ibv2"), ExtResource("4_6klbo")])
 spawnPoints = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
 
 [node name="SpawnPoint1" type="Node2D" parent="SpawnPointHolder"]

@@ -4,10 +4,14 @@ extends Node2D
 @export var enemyDamage: int;
 @export var enemyHealth: int;
 var currentHealth: int;
+var currentLookAt: Vector2 = Vector2(0,0);
+var spawnPointPos: Vector2;
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	look_at(Vector2(0,0))
-	
 func _physics_process(delta):
+	self.look_at(currentLookAt);
 	position += transform.x * enemySpeed * delta;
+
+func take_damage():
+	currentHealth -= 1;
+	if (currentHealth < 1):
+		self.queue_free();
