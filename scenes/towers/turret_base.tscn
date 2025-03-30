@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bx7w3dfm2n6sh" path="res://sprites/T1.png" id="2_0a5ir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0xya"]
-radius = 200.0
+radius = 500.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qd4m"]
 radius = 150.0
 
 [node name="TurretBase" type="Node2D"]
+rotation = 0.785398
 script = ExtResource("1_epptn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,6 +21,7 @@ texture = ExtResource("2_0a5ir")
 position = Vector2(56, 55)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_y0xya")

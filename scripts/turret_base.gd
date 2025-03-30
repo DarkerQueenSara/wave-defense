@@ -22,24 +22,28 @@ func _physics_process(delta: float) -> void:
 		turn()
 
 func select_enemy():
+	if enemy_array.size() == 0: enemy = null
 	var enemy_progress_array = [];
 	for i in enemy_array:
 		enemy_progress_array.append(i.global_position.distance_to(Vector2(0,0)));
-		#enemy_progress_array.append(i.global_position.distance_to(global_position));
 	var closest_distance = enemy_progress_array.min();
 	var enemy_index = enemy_progress_array.find(closest_distance);
 	enemy = enemy_array[enemy_index];
 
 func turn():
-	if enemy: $Sprite2D.look_at(enemy.global_position);
+	if enemy != null: $Sprite2D.look_at(enemy.global_position);
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("add enemy")
-	enemy_array.append(body.get_parent());
+	print("Entered turret")
+	print(body);
+	if not body.is_in_group("enemies"): return;
+	enemy_array.append(body);
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("remove enemy")
-	var enemy = body.get_parent()
+	print("Entered turret")
+	print(body);
+	if not body.is_in_group("enemies"): return;
+	var enemy = body
 	if enemy in enemy_array:
 		enemy_array.erase(enemy)
 	else:

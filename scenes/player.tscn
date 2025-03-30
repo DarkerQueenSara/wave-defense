@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgby8l02jp44x"]
+[gd_scene load_steps=5 format=3 uid="uid://dgby8l02jp44x"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5ngd4"]
 [ext_resource type="Texture2D" uid="uid://dvmw88f352c2o" path="res://sprites/JET_Static.png" id="2_amtyy"]
@@ -8,8 +8,6 @@ size = Vector2(25.5, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l10"]
 size = Vector2(100, 248)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rnbrv"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_5ngd4")
@@ -27,11 +25,5 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_20l10")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_rnbrv")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

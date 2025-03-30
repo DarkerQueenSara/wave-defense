@@ -5,19 +5,18 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_huq2q"]
 
-[node name="DummyEnemy" type="Node2D"]
+[node name="DummyEnemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
 script = ExtResource("1_12jnc")
-enemySpeed = 10.0
-enemyDamage = 1
-enemyHealth = 3
+enemySpeed = 5.0
+enemyDamage = 5
+enemyHealth = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_7q7wg")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_huq2q")
 

@@ -32,7 +32,6 @@ func _on_wave_timer_timeout() -> void:
 		var index = rng.randi_range(0,7);
 		var randomEnemy = getRandomEnemy();
 		var spawnedEnemy = randomEnemy.instantiate();
-		#get_tree().get_root().add_child(spawnedEnemy);
 		get_parent().add_child(spawnedEnemy);
 		spawnedEnemy.global_position = spawnPoints[index].global_position;
 		spawnedEnemy.look_at(Vector2(0, 0));

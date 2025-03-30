@@ -10,4 +10,4 @@ func fire():
 	b.transform = $Sprite2D/Marker2D.global_transform;
 
 func _on_timer_timeout() -> void:
-	fire();
+	if enemy != null: fire();

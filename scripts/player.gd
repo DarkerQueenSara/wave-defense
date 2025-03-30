@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const MAGNET = preload("res://scenes/magnet.tscn")
-const REPEL = preload("res://scenes/repel.tscn")
-const PROJECTILE_TURRET = preload("res://scenes/projectile_turret.tscn")
+const MAGNET = preload("res://scenes/towers/magnet.tscn")
+const REPEL = preload("res://scenes/towers/repel.tscn")
+const PROJECTILE_TURRET = preload("res://scenes/towers/projectile_turret.tscn")
 #const TOWER = preload("res://scenes/tower.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	var input_rotate = Input.get_axis("left","right")
 	
 	if input_move:
-		velocity = transform.y *  input_move * SPEED
+		velocity = transform.y * input_move * SPEED
 	else:
 		velocity = Vector2.ZERO
 	if input_rotate:

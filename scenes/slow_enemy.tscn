@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy5ntwxdt68ld"]
-
-[ext_resource type="PackedScene" uid="uid://jwab5ak57jqk" path="res://scenes/dummy_enemy.tscn" id="1_cal3c"]
-
-[node name="SlowEnemy" instance=ExtResource("1_cal3c")]
-scale = Vector2(1.5, 1.5)
-enemyDamage = 10
-enemyHealth = 1
