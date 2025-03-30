@@ -2,8 +2,8 @@ extends TurretBase
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	super(body);
-	body.get_parent().look_at(body.get_parent().spawnPointPos);
+	body.get_parent().currentLookAt = body.get_parent().spawnPointPos;
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	super(body);
-	body.get_parent().look_at(Vector2(0,0));
+	body.get_parent().currentLookAt = Vector2(0,0);
