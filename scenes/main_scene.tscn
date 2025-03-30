@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnv7cm5518vrg"]
+[gd_scene load_steps=12 format=3 uid="uid://cnv7cm5518vrg"]
 
 [ext_resource type="Script" path="res://scripts/spawn_point_holder.gd" id="1_a83y2"]
 [ext_resource type="Texture2D" uid="uid://cdkj88yg8ia8k" path="res://sprites/BACKGROUND.png" id="1_c87l1"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bcdknyqdtg00g" path="res://scenes/enemies/normal_enemy.tscn" id="2_ypghi"]
 [ext_resource type="PackedScene" uid="uid://qp5t131wopr4" path="res://scenes/enemies/fast_enemy.tscn" id="3_6ibv2"]
 [ext_resource type="PackedScene" uid="uid://dy5ntwxdt68ld" path="res://scenes/enemies/slow_enemy.tscn" id="4_6klbo"]
-[ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
+[ext_resource type="PackedScene" uid="uid://dgby8l02jp44x" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
-[ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
+[ext_resource type="PackedScene" uid="uid://bpi0nlatfssl2" path="res://scenes/island.tscn" id="9_b4r0s"]
+[ext_resource type="PackedScene" uid="uid://b7e0xqbsresa5" path="res://scenes/island_area.tscn" id="10_e4xhl"]
+[ext_resource type="PackedScene" uid="uid://ucvx01dqsgu0" path="res://scenes/hud.tscn" id="10_pm0vu"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -28,7 +30,8 @@ autostart = true
 wait_time = 10.0
 autostart = true
 
-[node name="CenterIsland" type="Node2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("4_uuxnm")]
+position = Vector2(0, -400)
 
 [node name="SpawnPointHolder" type="Node2D" parent="." node_paths=PackedStringArray("spawnPoints")]
 scale = Vector2(2.3, 2.3)
@@ -44,6 +47,7 @@ playAreaRadius = 1620
 position = Vector2(0, 540)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint1"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -52,6 +56,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(0, -540)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint2"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -60,6 +65,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(540, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint3"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -68,6 +74,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(-540, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint4"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -76,6 +83,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(-382, -382)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint5"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -84,6 +92,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(382, -382)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint6"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -92,6 +101,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(382, 382)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint7"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -100,6 +110,7 @@ texture = ExtResource("1_wl7kx")
 position = Vector2(-382, 382)
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnPointHolder/SpawnPoint8"]
+visible = false
 modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
@@ -113,5 +124,22 @@ collision_mask = 1
 
 [node name="WaveSpawner" type="Node2D" parent="."]
 
+[node name="Island" parent="." instance=ExtResource("9_b4r0s")]
+
+[node name="IslandArea" parent="Island" instance=ExtResource("10_e4xhl")]
+
+[node name="CollisionShape2D" parent="Island/IslandArea" index="0"]
+position = Vector2(-9.5, 3)
+
+[node name="HUD" parent="." instance=ExtResource("10_pm0vu")]
+offset_left = -2301.0
+offset_top = -1278.0
+offset_right = 15.0
+offset_bottom = 15.0
+scale = Vector2(2, 2)
+
 [connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
+
+[editable path="Island/IslandArea"]
+[editable path="HUD"]
