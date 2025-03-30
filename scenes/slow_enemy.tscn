@@ -6,6 +6,3 @@
 scale = Vector2(1.5, 1.5)
 enemyDamage = 10
 enemyHealth = 1
-
-[node name="RigidBody2D" parent="." index="1"]
-gravity_scale = 0.0

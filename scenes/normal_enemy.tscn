@@ -6,6 +6,3 @@
 enemySpeed = 20.0
 enemyDamage = 5
 enemyHealth = 1
-
-[node name="RigidBody2D" parent="." index="1"]
-gravity_scale = 0.0
