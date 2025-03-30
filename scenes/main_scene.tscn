@@ -38,6 +38,7 @@ enemyGrowthFactor = 0.5
 enemyArray = Array[PackedScene]([ExtResource("2_ypghi"), ExtResource("3_6ibv2"), ExtResource("4_6klbo")])
 spawnPoints = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
 wavePrefab = ExtResource("5_pfcyh")
+playAreaRadius = 1620
 
 [node name="SpawnPoint1" type="Node2D" parent="SpawnPointHolder"]
 position = Vector2(0, 540)

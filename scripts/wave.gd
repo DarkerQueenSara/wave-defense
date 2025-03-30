@@ -6,13 +6,13 @@ extends Node2D
 func _physics_process(delta):
 	position += transform.x * waveSpeed * delta;
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_death_timer_timeout() -> void:
+	self.queue_free();
+
+func _on_body_entered(body: Node2D) -> void:
 	body.get_node("Sprite2D").scale *= scaleFactor;
 	if body.is_in_group("enemies"):
 		body.take_damage();
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_body_exited(body: Node2D) -> void:
 	body.get_node("Sprite2D").scale /= scaleFactor;
-
-func _on_death_timer_timeout() -> void:
-	self.queue_free();
