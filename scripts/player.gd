@@ -54,10 +54,10 @@ func t_collision_func(tower):
 		
 
 func place_tower(tower_scene):
-	if towersAvailable > 0:
+	if amount >= 1:
 		var newTower = tower_scene.instantiate()
 		newTower.global_position = global_position
 		get_parent().add_child(newTower)
-		towersAvailable -= 1
+		amount -= 1
 	else:
 		print("No build")

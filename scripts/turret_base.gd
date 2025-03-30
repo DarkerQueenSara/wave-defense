@@ -21,8 +21,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Time.get_ticks_msec() - activation_time >= 30000.0:
 		queue_free()
-		player.towersAvailable += 1
-		print(player.towersAvailable)
+		#player.towersAvailable += 1
+		#print(player.towersAvailable)
 		
 	if (enemy_array.size() > 0):
 		select_enemy();
