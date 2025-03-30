@@ -25,7 +25,6 @@ func getRandomEnemy() -> PackedScene:
 	if (random_float < 0.85):
 		return enemyArray[1];
 	return enemyArray[2];
-	
 
 func _on_wave_timer_timeout() -> void:
 	currentEnemies += roundf(currentWave * enemyGrowthFactor);
@@ -33,7 +32,8 @@ func _on_wave_timer_timeout() -> void:
 		var index = rng.randi_range(0,7);
 		var randomEnemy = getRandomEnemy();
 		var spawnedEnemy = randomEnemy.instantiate();
-		get_tree().get_root().add_child(spawnedEnemy);
+		#get_tree().get_root().add_child(spawnedEnemy);
+		get_parent().add_child(spawnedEnemy);
 		spawnedEnemy.global_position = spawnPoints[index].global_position;
 		spawnedEnemy.look_at(Vector2(0, 0));
 		spawnedEnemy.spawnPointPos = spawnPoints[index].global_position;

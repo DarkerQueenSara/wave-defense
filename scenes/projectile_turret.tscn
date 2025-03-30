@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0xdt4jxlkvxw"]
+[gd_scene load_steps=5 format=3 uid="uid://d0xdt4jxlkvxw"]
 
 [ext_resource type="PackedScene" uid="uid://nllg77omh6tn" path="res://scenes/turret_base.tscn" id="1_r68ck"]
 [ext_resource type="Script" path="res://scripts/projectile_turret.gd" id="2_ol8ld"]
 [ext_resource type="PackedScene" uid="uid://cpsyannjrr76s" path="res://scenes/bullet.tscn" id="3_37qyx"]
+[ext_resource type="Texture2D" uid="uid://bx7w3dfm2n6sh" path="res://sprites/T1.png" id="4_6lk7u"]
 
 [node name="ProjectileTurret" instance=ExtResource("1_r68ck")]
 script = ExtResource("2_ol8ld")
 projectile = ExtResource("3_37qyx")
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 0.127409
+texture = ExtResource("4_6lk7u")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+scale = Vector2(50, 50)
 
 [node name="Timer" type="Timer" parent="." index="2"]
 autostart = true

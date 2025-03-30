@@ -5,3 +5,7 @@
 [node name="FastEnemy" instance=ExtResource("1_k15jd")]
 enemySpeed = 30.0
 enemyDamage = 2
+enemyHealth = 1
+
+[node name="RigidBody2D" parent="." index="1"]
+gravity_scale = 0.0

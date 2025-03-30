@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-const TOWER = preload("res://scenes/tower.tscn")
+const MAGNET = preload("res://scenes/magnet.tscn")
+const REPEL = preload("res://scenes/repel.tscn")
+const PROJECTILE_TURRET = preload("res://scenes/projectile_turret.tscn")
+#const TOWER = preload("res://scenes/tower.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var amount = 0
@@ -9,11 +12,16 @@ var isWorkingOnCollision = false
 var triggered_objects = []
 var rotation_speed = 1.5
 
+var tower_scenes = {
+	"towerNormal": PROJECTILE_TURRET,
+	"towerRepel": REPEL,
+	"towerMagnet": MAGNET
+	}
+
 func _init() -> void:
 	look_at(Vector2(1,0))
 
 func _physics_process(delta: float) -> void:
-	#var input_dir = Input.get_vector("left","right","up","down")
 	var input_move = Input.get_axis("up","down")
 	var input_rotate = Input.get_axis("left","right")
 	
@@ -26,14 +34,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if (Input.is_action_just_pressed("build")):
-		if towersAvailable > 0:
-			var newTower = TOWER.instantiate()
-			newTower.global_position = global_position
-			get_parent().add_child(newTower)
-			towersAvailable -= 1
-		else:
-			print("no build")
+	for action in tower_scenes.keys():
+		if Input.is_action_just_pressed(action):
+			place_tower(tower_scenes[action])
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -49,3 +52,12 @@ func t_collision_func(tower):
 		triggered_objects[0].queue_free()
 		triggered_objects.clear()
 		
+
+func place_tower(tower_scene):
+	if towersAvailable > 0:
+		var newTower = tower_scene.instantiate()
+		newTower.global_position = global_position
+		get_parent().add_child(newTower)
+		towersAvailable -= 1
+	else:
+		print("No build")
