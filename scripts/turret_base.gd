@@ -3,7 +3,8 @@ extends Node2D
 class_name TurretBase
 
 const MAIN_SCENE = preload("res://scenes/main_scene.tscn")
-const PLAYER = preload("res://scenes/player.tscn")
+#const PLAYER = preload("res://scenes/player.tscn")
+var player;
 signal t_collision
 var activation_time = 0
 var enemy_array = [];
@@ -14,11 +15,15 @@ func _ready() -> void:
 	var rootChildren = get_parent().get_children()
 	for child in rootChildren:
 		if (child.is_in_group("player")):
+			player = child;
 			t_collision.connect(child.t_collision_func)
 
 func _physics_process(delta: float) -> void:
-	if Time.get_ticks_msec() - activation_time >= 3000.0:
+	if Time.get_ticks_msec() - activation_time >= 30000.0:
 		queue_free()
+		player.towersAvailable += 1
+		print(player.towersAvailable)
+		
 	if (enemy_array.size() > 0):
 		select_enemy();
 		turn()
