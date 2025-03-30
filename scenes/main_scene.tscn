@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnv7cm5518vrg"]
+[gd_scene load_steps=10 format=3 uid="uid://cnv7cm5518vrg"]
 
 [ext_resource type="Script" path="res://scripts/spawn_point_holder.gd" id="1_a83y2"]
 [ext_resource type="Texture2D" uid="uid://cdkj88yg8ia8k" path="res://sprites/BACKGROUND.png" id="1_c87l1"]
@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dy5ntwxdt68ld" path="res://scenes/enemies/slow_enemy.tscn" id="4_6klbo"]
 [ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
-[ext_resource type="PackedScene" uid="uid://bpi0nlatfssl2" path="res://scenes/island.tscn" id="9_b4r0s"]
-[ext_resource type="PackedScene" uid="uid://ucvx01dqsgu0" path="res://scenes/hud.tscn" id="10_pm0vu"]
+[ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -29,8 +28,7 @@ autostart = true
 wait_time = 10.0
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource("4_uuxnm")]
-position = Vector2(0, -400)
+[node name="CenterIsland" type="Node2D" parent="."]
 
 [node name="SpawnPointHolder" type="Node2D" parent="." node_paths=PackedStringArray("spawnPoints")]
 scale = Vector2(2.3, 2.3)
@@ -106,18 +104,15 @@ modulate = Color(0, 1, 1, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_wl7kx")
 
+[node name="Resource" parent="." instance=ExtResource("5_vbinm")]
+position = Vector2(-342, -188)
+amount = 5
+
+[node name="Player" parent="." instance=ExtResource("4_uuxnm")]
+position = Vector2(15, 9)
+collision_mask = 1
+
 [node name="WaveSpawner" type="Node2D" parent="."]
-
-[node name="Island" parent="." instance=ExtResource("9_b4r0s")]
-
-[node name="HUD" parent="." instance=ExtResource("10_pm0vu")]
-offset_left = -2301.0
-offset_top = -1278.0
-offset_right = 15.0
-offset_bottom = 15.0
-scale = Vector2(2, 2)
 
 [connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
-
-[editable path="HUD"]
