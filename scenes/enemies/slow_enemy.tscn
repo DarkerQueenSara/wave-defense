@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy5ntwxdt68ld"]
+[gd_scene load_steps=3 format=3 uid="uid://dy5ntwxdt68ld"]
 
 [ext_resource type="PackedScene" uid="uid://jwab5ak57jqk" path="res://scenes/enemies/dummy_enemy.tscn" id="1_nvpyi"]
+[ext_resource type="Texture2D" uid="uid://bo7cx8i4eegnf" path="res://sprites/M3_Tank.png" id="2_vx1rv"]
 
 [node name="SlowEnemy" instance=ExtResource("1_nvpyi")]
 scale = Vector2(2, 2)
 enemySpeed = 50.0
 enemyDamage = 10
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.57724
+scale = Vector2(1.14516, 1.14516)
+texture = ExtResource("2_vx1rv")

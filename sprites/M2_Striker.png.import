@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcs0uihtnyt5s"
-path="res://.godot/imported/M1_minion.png-b6ce7878d03e63632438ea4072017480.ctex"
+uid="uid://b0vrkmnvi7r3v"
+path="res://.godot/imported/M2_Striker.png-93b1f4d01d28685c0c65bd0175814a7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/M1_minion.png"
-dest_files=["res://.godot/imported/M1_minion.png-b6ce7878d03e63632438ea4072017480.ctex"]
+source_file="res://sprites/M2_Striker.png"
+dest_files=["res://.godot/imported/M2_Striker.png-93b1f4d01d28685c0c65bd0175814a7d.ctex"]
 
 [params]
 

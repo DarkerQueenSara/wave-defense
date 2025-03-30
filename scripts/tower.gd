@@ -15,7 +15,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Time.get_ticks_msec() - activation_time >= 3.0:
+		get_tree().free()
 
 
 func _on_area_entered(area: Area2D) -> void:

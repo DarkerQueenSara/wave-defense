@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcs0uihtnyt5s"
-path="res://.godot/imported/M1_minion.png-b6ce7878d03e63632438ea4072017480.ctex"
+uid="uid://bo7cx8i4eegnf"
+path="res://.godot/imported/M3_Tank.png-717decd32019cb13f78635629192e157.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/M1_minion.png"
-dest_files=["res://.godot/imported/M1_minion.png-b6ce7878d03e63632438ea4072017480.ctex"]
+source_file="res://sprites/M3_Tank.png"
+dest_files=["res://.godot/imported/M3_Tank.png-717decd32019cb13f78635629192e157.ctex"]
 
 [params]
 

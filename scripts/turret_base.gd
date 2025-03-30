@@ -17,6 +17,8 @@ func _ready() -> void:
 			t_collision.connect(child.t_collision_func)
 
 func _physics_process(delta: float) -> void:
+	if Time.get_ticks_msec() - activation_time >= 3000.0:
+		queue_free()
 	if (enemy_array.size() > 0):
 		select_enemy();
 		turn()
