@@ -27,6 +27,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	else:
 		print("Enemy not found in array:", enemy)
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if (area.is_in_group("tower")):
+		#t_collision.emit(self)
+
+
+func _on_spawn_collision_area_entered(area: Area2D) -> void:
 	if (area.is_in_group("tower")):
 		t_collision.emit(self)

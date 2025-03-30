@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://nllg77omh6tn"]
+[gd_scene load_steps=5 format=3 uid="uid://nllg77omh6tn"]
 
 [ext_resource type="Script" path="res://scripts/turret_base.gd" id="1_epptn"]
 [ext_resource type="Texture2D" uid="uid://dpwdebvfesywv" path="res://icon.svg" id="2_tuc33"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0xya"]
 radius = 30.0167
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qd4m"]
+radius = 32.0624
 
 [node name="TurretBase" type="Node2D"]
 script = ExtResource("1_epptn")
@@ -16,11 +19,16 @@ texture = ExtResource("2_tuc33")
 [node name="Marker2D" type="Marker2D" parent="Sprite2D"]
 position = Vector2(50, 0)
 
-[node name="Area2D" type="Area2D" parent="." groups=["tower"]]
+[node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_y0xya")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="SpawnCollision" type="Area2D" parent="." groups=["tower"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnCollision"]
+shape = SubResource("CircleShape2D_7qd4m")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="SpawnCollision" to="." method="_on_spawn_collision_area_entered"]

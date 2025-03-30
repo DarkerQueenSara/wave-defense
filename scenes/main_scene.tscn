@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnv7cm5518vrg"]
+[gd_scene load_steps=9 format=3 uid="uid://cnv7cm5518vrg"]
 
 [ext_resource type="Script" path="res://scripts/spawn_point_holder.gd" id="1_a83y2"]
 [ext_resource type="Texture2D" uid="uid://ij0awmc3l22c" path="res://sprites/800px-Circle_-_black_simple.svg.png" id="1_wl7kx"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
 [ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
-[ext_resource type="PackedScene" uid="uid://ctmw1pv28juc0" path="res://scenes/repel.tscn" id="9_2gatr"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -105,9 +104,6 @@ amount = 5
 position = Vector2(15, 9)
 
 [node name="WaveSpawner" type="Node2D" parent="."]
-
-[node name="Repel" parent="." instance=ExtResource("9_2gatr")]
-position = Vector2(8, -174)
 
 [connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
