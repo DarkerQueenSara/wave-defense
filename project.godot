@@ -24,6 +24,7 @@ Global="*res://global.gd"
 resource=""
 player=""
 tower=""
+enemies=""
 
 [input]
 

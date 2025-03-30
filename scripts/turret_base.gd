@@ -16,12 +16,17 @@ func _ready() -> void:
 			t_collision.connect(child.t_collision_func)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("add enemy")
 	enemy_array.append(body.get_parent());
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	enemy_array.remove(body.get_parent());
+	print("remove enemy")
+	var enemy = body.get_parent()
+	if enemy in enemy_array:
+		enemy_array.erase(enemy)
+	else:
+		print("Enemy not found in array:", enemy)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.is_in_group("tower")):
-		print("collision")
 		t_collision.emit(self)

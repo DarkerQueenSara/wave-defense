@@ -37,33 +37,6 @@ func _physics_process(delta: float) -> void:
 	for action in tower_scenes.keys():
 		if Input.is_action_just_pressed(action):
 			place_tower(tower_scenes[action])
-	
-	#if (Input.is_action_just_pressed("towerNormal")):
-		#if towersAvailable > 0:
-			#var newTower = PROJECTILE_TURRET.instantiate()
-			#newTower.global_position = global_position
-			#get_parent().add_child(newTower)
-			#towersAvailable -= 1
-		#else:
-			#print("no build")
-	#
-	#if (Input.is_action_just_pressed("towerRepel")):
-		#if towersAvailable > 0:
-			#var newTower = REPEL.instantiate()
-			#newTower.global_position = global_position
-			#get_parent().add_child(newTower)
-			#towersAvailable -= 1
-		#else:
-			#print("no build")
-	#
-	#if (Input.is_action_just_pressed("towerMagnet")):
-		#if towersAvailable > 0:
-			#var newTower = MAGNET.instantiate()
-			#newTower.global_position = global_position
-			#get_parent().add_child(newTower)
-			#towersAvailable -= 1
-		#else:
-			#print("no build")
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -73,10 +46,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		area.queue_free()
 
 func t_collision_func(tower):
-	print("heu")
 	triggered_objects.append(tower)
 	if (triggered_objects.size() == 2):
-		print("heee")
 		triggered_objects.sort_custom(func(a, b): return a.activation_time > b.activation_time)
 		triggered_objects[0].queue_free()
 		triggered_objects.clear()
