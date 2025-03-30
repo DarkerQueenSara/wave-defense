@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
 [ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
-[ext_resource type="PackedScene" uid="uid://c2kscjm3ieb20" path="res://scenes/magnet.tscn" id="9_54ioj"]
+[ext_resource type="PackedScene" uid="uid://ctmw1pv28juc0" path="res://scenes/repel.tscn" id="9_2gatr"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -106,8 +106,8 @@ position = Vector2(15, 9)
 
 [node name="WaveSpawner" type="Node2D" parent="."]
 
-[node name="Magnet" parent="." instance=ExtResource("9_54ioj")]
-position = Vector2(332, 12)
+[node name="Repel" parent="." instance=ExtResource("9_2gatr")]
+position = Vector2(8, -174)
 
 [connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
