@@ -1,0 +1,133 @@
+[gd_scene load_steps=6 format=3 uid="uid://ucvx01dqsgu0"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_7bbf8"]
+[ext_resource type="Texture2D" uid="uid://bx7w3dfm2n6sh" path="res://sprites/T1.png" id="2_smoyr"]
+[ext_resource type="Texture2D" uid="uid://drl68vjx6ccwu" path="res://sprites/T2.png" id="3_xigav"]
+[ext_resource type="Texture2D" uid="uid://c0v3pdejm3l45" path="res://sprites/T3.png" id="4_cbsnl"]
+[ext_resource type="Texture2D" uid="uid://tyvhnjjkenwc" path="res://sprites/Collectible.png" id="5_2nx5i"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bbf8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(115, 171)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("2_smoyr")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Z  - 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(115, 171)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_xigav")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X  - 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(115, 171)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_cbsnl")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "C - 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "30:30"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_2nx5i")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "30"
+horizontal_alignment = 2
+vertical_alignment = 2
