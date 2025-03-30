@@ -101,6 +101,7 @@ theme_override_font_sizes/font_size = 35
 text = "Tutorial"
 
 [node name="StoryButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_aq7di")
@@ -129,6 +130,11 @@ layout_mode = 1
 [node name="TutorialMenu" parent="." instance=ExtResource("3_htvr0")]
 visible = false
 layout_mode = 1
+
+[node name="Explanation" parent="TutorialMenu/MarginContainer/VBoxContainer" index="1"]
+text = "Prevent the spirits from reaching the island. Use W/S to go forward/back and A/D to turn left and right.
+
+Pick up resources from downed enemies to built towers, using Z, X and C. A shooter, a magnet and a repel."
 
 [node name="StoryMenu" parent="." instance=ExtResource("4_grqxg")]
 visible = false
