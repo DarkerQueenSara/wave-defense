@@ -9,3 +9,6 @@ script = ExtResource("2_inptv")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_l8kci")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+scale = Vector2(50, 50)
