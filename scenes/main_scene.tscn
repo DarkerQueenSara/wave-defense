@@ -1,19 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnv7cm5518vrg"]
+[gd_scene load_steps=10 format=3 uid="uid://cnv7cm5518vrg"]
 
 [ext_resource type="Script" path="res://scripts/spawn_point_holder.gd" id="1_a83y2"]
+[ext_resource type="Texture2D" uid="uid://cdkj88yg8ia8k" path="res://sprites/BACKGROUND.png" id="1_c87l1"]
 [ext_resource type="Texture2D" uid="uid://ij0awmc3l22c" path="res://sprites/800px-Circle_-_black_simple.svg.png" id="1_wl7kx"]
 [ext_resource type="PackedScene" uid="uid://bcdknyqdtg00g" path="res://scenes/normal_enemy.tscn" id="2_ypghi"]
 [ext_resource type="PackedScene" uid="uid://qp5t131wopr4" path="res://scenes/fast_enemy.tscn" id="3_6ibv2"]
 [ext_resource type="PackedScene" uid="uid://dy5ntwxdt68ld" path="res://scenes/slow_enemy.tscn" id="4_6klbo"]
 [ext_resource type="PackedScene" uid="uid://dgby8l02jp44x" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
-[ext_resource type="PackedScene" path="res://scenes/resource.tscn" id="5_vbinm"]
+[ext_resource type="PackedScene" uid="uid://dsxrgj1pkbayt" path="res://scenes/resource.tscn" id="5_vbinm"]
 
 [node name="MainScene" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("1_c87l1")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.1, 0.1)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.25, 0.25)
 
 [node name="EnemyWaveTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -26,6 +31,7 @@ autostart = true
 [node name="CenterIsland" type="Node2D" parent="."]
 
 [node name="SpawnPointHolder" type="Node2D" parent="." node_paths=PackedStringArray("spawnPoints")]
+scale = Vector2(2.3, 2.3)
 script = ExtResource("1_a83y2")
 startingEnemies = 2
 enemyGrowthFactor = 0.5
