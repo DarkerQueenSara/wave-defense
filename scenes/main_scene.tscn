@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bcdknyqdtg00g" path="res://scenes/enemies/normal_enemy.tscn" id="2_ypghi"]
 [ext_resource type="PackedScene" uid="uid://qp5t131wopr4" path="res://scenes/enemies/fast_enemy.tscn" id="3_6ibv2"]
 [ext_resource type="PackedScene" uid="uid://dy5ntwxdt68ld" path="res://scenes/enemies/slow_enemy.tscn" id="4_6klbo"]
-[ext_resource type="PackedScene" uid="uid://dgby8l02jp44x" path="res://scenes/player.tscn" id="4_uuxnm"]
+[ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
-[ext_resource type="PackedScene" uid="uid://dsxrgj1pkbayt" path="res://scenes/resource.tscn" id="5_vbinm"]
+[ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
 
 [node name="MainScene" type="Node2D"]
 
