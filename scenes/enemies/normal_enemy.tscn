@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcs0uihtnyt5s" path="res://sprites/M1_minion.png" id="2_3gmb0"]
 
 [node name="NormalEnemy" instance=ExtResource("1_hotun")]
-enemySpeed = 25.0
+enemySpeed = 75.0
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = 1.56277

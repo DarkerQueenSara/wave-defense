@@ -4,19 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://dvmw88f352c2o" path="res://sprites/JET_Static.png" id="2_amtyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5t2bw"]
-size = Vector2(25.5, 24)
+size = Vector2(60, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20l10"]
 size = Vector2(100, 248)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 17
 script = ExtResource("1_5ngd4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5t2bw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_amtyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -19)
+shape = SubResource("RectangleShape2D_5t2bw")
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 collision_mask = 255
