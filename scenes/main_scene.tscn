@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brdjr7mn07rd" path="res://scenes/player.tscn" id="4_uuxnm"]
 [ext_resource type="PackedScene" uid="uid://nof136r48xpt" path="res://scenes/wave.tscn" id="5_pfcyh"]
 [ext_resource type="PackedScene" uid="uid://0mov2oufl77v" path="res://scenes/resource.tscn" id="5_vbinm"]
-[ext_resource type="PackedScene" uid="uid://d0xdt4jxlkvxw" path="res://scenes/projectile_turret.tscn" id="9_yxfak"]
+[ext_resource type="PackedScene" uid="uid://c2kscjm3ieb20" path="res://scenes/magnet.tscn" id="9_54ioj"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -106,8 +106,8 @@ position = Vector2(15, 9)
 
 [node name="WaveSpawner" type="Node2D" parent="."]
 
-[node name="ProjectileTurret" parent="." instance=ExtResource("9_yxfak")]
-position = Vector2(-3, -158)
+[node name="Magnet" parent="." instance=ExtResource("9_54ioj")]
+position = Vector2(332, 12)
 
 [connection signal="timeout" from="EnemyWaveTimer" to="SpawnPointHolder" method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="WaterWaveTimer" to="SpawnPointHolder" method="_on_water_wave_timer_timeout"]
