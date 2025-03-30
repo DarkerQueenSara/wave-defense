@@ -10,5 +10,5 @@ func _on_body_entered(body: Node2D) -> void:
 		print("got hit")
 		curHealth -= body.enemyDamage;
 		if (curHealth <= 0):
-			Global.score = 0
+			if (Global.score > Global.highScore): Global.highScore = Global.score;
 			get_tree().change_scene_to_packed(CREDITS_MENU)
