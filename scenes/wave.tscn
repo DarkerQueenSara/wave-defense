@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://nof136r48xpt"]
+[gd_scene load_steps=4 format=3 uid="uid://nof136r48xpt"]
 
 [ext_resource type="Script" path="res://scripts/wave.gd" id="1_smb2j"]
+[ext_resource type="Texture2D" uid="uid://203kpdbyotb8" path="res://sprites/Square_-_black_simple.svg.png" id="2_dd435"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at3hg"]
 
 [node name="Wave" type="Node2D"]
 script = ExtResource("1_smb2j")
+waveSpeed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.99998, 9.53674e-07)
+rotation = 1.5708
+scale = Vector2(1.296, 0.164)
+texture = ExtResource("2_dd435")
 
 [node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(20, 2)

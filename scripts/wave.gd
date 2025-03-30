@@ -14,6 +14,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	body.get_parent().get_node("Sprite2D").scale /= scaleFactor;
 
-
 func _on_death_timer_timeout() -> void:
 	self.queue_free();

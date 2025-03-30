@@ -8,7 +8,7 @@ var currentLookAt: Vector2 = Vector2(0,0);
 var spawnPointPos: Vector2;
 
 func _physics_process(delta):
-	self.look_at(currentLookAt);
+	#self.look_at(currentLookAt);
 	position += transform.x * enemySpeed * delta;
 
 func take_damage():

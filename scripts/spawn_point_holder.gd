@@ -49,5 +49,5 @@ func _on_water_wave_timer_timeout() -> void:
 	var directionPoint = _random_inside_unit_circle() * playAreaRadius;
 	var spawnedWave = wavePrefab.instantiate();
 	$"../WaveSpawner".add_child(spawnedWave);
-	spawnedWave.global_position = spawnPoint.global_position;
+	spawnedWave.global_position = spawnPoint;
 	spawnedWave.look_at(directionPoint);
