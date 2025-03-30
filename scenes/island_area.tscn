@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_phqgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfgva"]
-size = Vector2(288, 292)
+size = Vector2(307, 298)
 
 [node name="IslandArea" type="Area2D"]
 collision_layer = 0
