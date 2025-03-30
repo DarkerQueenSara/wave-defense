@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7e0xqbsresa5"]
+
+[ext_resource type="Script" path="res://scripts/island.gd" id="1_phqgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfgva"]
+size = Vector2(288, 292)
+
+[node name="IslandArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 255
+script = ExtResource("1_phqgd")
+healthTotal = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jfgva")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

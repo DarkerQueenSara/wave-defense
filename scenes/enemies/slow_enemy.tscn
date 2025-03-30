@@ -4,5 +4,5 @@
 
 [node name="SlowEnemy" instance=ExtResource("1_nvpyi")]
 scale = Vector2(2, 2)
-enemySpeed = 10.0
+enemySpeed = 50.0
 enemyDamage = 10

@@ -7,7 +7,7 @@
 
 [node name="DummyEnemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 16
 script = ExtResource("1_12jnc")
 enemySpeed = 5.0
 enemyDamage = 5
@@ -18,11 +18,5 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_7q7wg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.5, 3.5)
-shape = SubResource("CircleShape2D_huq2q")
-
-[node name="Area2D" type="Area2D" parent="." groups=["enemies"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_huq2q")

@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://jwab5ak57jqk" path="res://scenes/enemies/dummy_enemy.tscn" id="1_hotun"]
 
 [node name="NormalEnemy" instance=ExtResource("1_hotun")]
-enemySpeed = 25.0
+enemySpeed = 75.0
