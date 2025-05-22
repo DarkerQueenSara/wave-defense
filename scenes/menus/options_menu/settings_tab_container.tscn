@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4bdlqboj5uju"]
 
-[ext_resource type="PackedScene" uid="uid://dfv1k2a7qm88y" path="res://menus/options_menu/audio_slider.tscn" id="1_4pwu6"]
-[ext_resource type="PackedScene" uid="uid://cqq2kb7yc7d5s" path="res://menus/options_menu/options_buttons/window_mode_button.tscn" id="2_h436t"]
-[ext_resource type="PackedScene" uid="uid://boqufdiqnuwmt" path="res://menus/options_menu/options_buttons/window_resolution_button.tscn" id="3_oep3o"]
+[ext_resource type="PackedScene" uid="uid://dfv1k2a7qm88y" path="res://scenes/menus/options_menu/audio_slider.tscn" id="1_4pwu6"]
+[ext_resource type="PackedScene" uid="uid://cqq2kb7yc7d5s" path="res://scenes/menus/options_menu/options_buttons/window_mode_button.tscn" id="2_h436t"]
+[ext_resource type="PackedScene" uid="uid://boqufdiqnuwmt" path="res://scenes/menus/options_menu/options_buttons/window_resolution_button.tscn" id="3_oep3o"]
 
 [node name="SettingsTabContainer" type="Control"]
 layout_mode = 3

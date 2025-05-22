@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://nof136r48xpt"]
 
-[ext_resource type="Script" path="res://scripts/wave.gd" id="1_smb2j"]
+[ext_resource type="Script" uid="uid://ddxfne3fcfl13" path="res://scripts/wave.gd" id="1_smb2j"]
 [ext_resource type="Texture2D" uid="uid://203kpdbyotb8" path="res://sprites/Square_-_black_simple.svg.png" id="2_dd435"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at3hg"]

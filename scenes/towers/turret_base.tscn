@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nllg77omh6tn"]
 
-[ext_resource type="Script" path="res://scripts/turret_base.gd" id="1_epptn"]
+[ext_resource type="Script" uid="uid://bsrb4d2ym5ywk" path="res://scripts/turret_base.gd" id="1_epptn"]
 [ext_resource type="Texture2D" uid="uid://bx7w3dfm2n6sh" path="res://sprites/T1.png" id="2_0a5ir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y0xya"]

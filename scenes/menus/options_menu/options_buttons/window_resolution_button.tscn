@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://boqufdiqnuwmt"]
 
 [ext_resource type="PackedScene" uid="uid://d2nfbgac7suwv" path="res://scenes/menus/options_menu/options_display_button.tscn" id="1_pd4rm"]
-[ext_resource type="Script" path="res://scenes/menus/options_menu/options_buttons/window_resolution_button.gd" id="2_mg7pq"]
+[ext_resource type="Script" uid="uid://bj3s2vxq37gr3" path="res://scenes/menus/options_menu/options_buttons/window_resolution_button.gd" id="2_mg7pq"]
 
 [node name="WindowResolutionButton" instance=ExtResource("1_pd4rm")]
 script = ExtResource("2_mg7pq")
